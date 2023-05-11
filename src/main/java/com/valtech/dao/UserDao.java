@@ -4,6 +4,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
 
+import org.apache.tomcat.jdbc.pool.DataSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -14,8 +15,10 @@ import com.valtech.model.User;
 
 public class UserDao {
 	
+
 	@Autowired
 	private JdbcTemplate jdbcTemplate;
+	
 	
 	
 
@@ -37,6 +40,13 @@ public class UserDao {
 			return user;
 		}
 	
+		
+		public User getUserbyUserName(String username) {
+			String sql = "SELECT * FROM user WHERE userId = ?";
+			User user = jdbcTemplate.queryForObject(sql, new Object[] { username }, new BeanPropertyRowMapper<User>(User.class));
+			return user;
+		}
+		
 		
 		
 		//save method
@@ -72,4 +82,33 @@ public class UserDao {
 		String sql = "DELETE FROM user WHERE userId = ?";
 		jdbcTemplate.update(sql, userId);
 	}
+	
+	 public User findByEmail(String email) {
+         String sql = "SELECT * FROM User WHERE email = ?";
+         RowMapper<User> rowMapper = new BeanPropertyRowMapper<User>(User.class);
+         return jdbcTemplate.queryForObject(sql, rowMapper, email);
+     }
+
+		
+		  public User findByEmailAndPassword(String email, String password) {
+		  String sql = "SELECT * FROM User WHERE email = ? AND password = ?"; 
+		  RowMapper<User>rowMapper = new BeanPropertyRowMapper<User>(User.class);
+		  return jdbcTemplate.queryForObject(sql, rowMapper, email, password); 
+		  }
+		 
+     
+         public User findByNameAndPassword(String username, String password) {
+         String sql = "SELECT * FROM User WHERE username = ? AND password = ?";
+         RowMapper<User> rowMapper = new BeanPropertyRowMapper<User>(User.class);
+         return jdbcTemplate.queryForObject(sql, rowMapper, username, password);
+     }
+         
 }
+		/*
+		 * public User validateUser(Login login) { String sql
+		 * ="select * from User where username='"+login.getUsername()+"'and password'"
+		 * +login.getpassword()"'"; List<User> users=jdbcTemplate.query(sql,new User());
+		 * return users.size()>0?users.get(0):null;
+		 * 
+		 * }
+		 */

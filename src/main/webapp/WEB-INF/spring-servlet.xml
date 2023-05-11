@@ -16,7 +16,7 @@
 		<property name="suffix" value=".jsp"></property>
 </bean>	
 
-
+<bean id="warehouseDAO" class="com.valtech.dao.WarehouseDAO"></bean>
 <bean id="userDao" class="com.valtech.dao.UserDao"></bean>
 <bean id="productDAO" class="com.valtech.dao.ProductDAO"></bean>
     

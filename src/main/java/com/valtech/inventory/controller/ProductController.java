@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.valtech.dao.ProductDAO;
 import com.valtech.model.Product;
@@ -67,6 +68,18 @@ public class ProductController {
 			return "redirect:/productList";
 		}
 		
-	
+		
+		@RequestMapping(value = "/search", method = RequestMethod.GET)
+		public String search(@RequestParam("product_id") int product_id, Model model) {
+		  // search for the product by ID
+		  Product product = productDAO.getProductById(product_id);
+		  
+		  // add the product to the model
+		  model.addAttribute("product", product);
+		  System.out.println("pList");
+		  return "pList";
+		}
+
+		
 	
 }

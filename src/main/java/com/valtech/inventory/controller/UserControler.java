@@ -2,13 +2,18 @@ package com.valtech.inventory.controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.ui.ModelMap;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.valtech.dao.UserDao;
 import com.valtech.model.User;
@@ -65,7 +70,40 @@ public class UserControler {
 		return "redirect:/managerList";// will redirect to viewemp request mapping
 
 	}
+	
+	//login
 
+	/*
+	 * @RequestMapping(value = "/index", method = RequestMethod.GET) public String
+	 * showLoginForm(ModelMap model) { model.addAttribute("user", new User());
+	 * return "index"; }
+	 */
+     @RequestMapping(value = "/index", method = RequestMethod.POST)
+     public String processLogin(@ModelAttribute("user") User user,
+                                BindingResult result,
+                                ModelMap model,
+                                HttpSession session) {
+         String email = user.getEmail();
+         String password = user.getPassword();
+         User loggedInCustomer = userDao.findByEmailAndPassword(email, password);
+         if (loggedInCustomer != null) {
+             session.setAttribute("user", loggedInCustomer);
+             if (loggedInCustomer.getRole().equals("user"))
+             {
+                 return "productList";
+             } else if (loggedInCustomer.getRole().equals("admin")) {
+                 return "managerList";
+             }
+         } else {
+             model.addAttribute("error", "Invalid email or password");
+             return "index";
+         }
+         return null;
+     }
+	
+	
+	
+	
 	/*
 	 * // Get all users
 	 * 

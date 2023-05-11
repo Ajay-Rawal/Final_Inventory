@@ -5,18 +5,50 @@ public class Warehouse {
 	private int Wid;
 	private String Wname;
 	private String Waddress;
+	private int product_id;
+	private int inventory_id;
 	
 	public Warehouse() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public Warehouse(int wid, String wname, String waddress) {
+	
+
+	public Warehouse(int wid, String wname, String waddress, int product_id, int inventory_id) {
 		super();
-		Wid = wid;
-		Wname = wname;
-		Waddress = waddress;
+		this.Wid = wid;
+		this.Wname = wname;
+		this.Waddress = waddress;
+		this.product_id = product_id;
+		this.inventory_id = inventory_id;
 	}
+
+
+
+	public int getProduct_id() {
+		return product_id;
+	}
+
+
+
+	public void setProduct_id(int product_id) {
+		this.product_id = product_id;
+	}
+
+
+
+	public int getInventory_id() {
+		return inventory_id;
+	}
+
+
+
+	public void setInventory_id(int inventory_id) {
+		this.inventory_id = inventory_id;
+	}
+
+
 
 	public int getWid() {
 		return Wid;
@@ -42,10 +74,14 @@ public class Warehouse {
 		Waddress = waddress;
 	}
 
+
+
 	@Override
 	public String toString() {
-		return "Warehouse [Wid=" + Wid + ", Wname=" + Wname + ", Waddress=" + Waddress + "]";
+		return "Warehouse [Wid=" + Wid + ", Wname=" + Wname + ", Waddress=" + Waddress + ", product_id=" + product_id
+				+ ", inventory_id=" + inventory_id + "]";
 	}
+
 	
 	
 

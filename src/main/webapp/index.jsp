@@ -50,10 +50,10 @@
 </head>
 <body>
 	<div class="container">
-		<form action="login.php" method="POST">
+		<form action="managerList" method="POST">
 			<h2>Login Form</h2>
-			<label for="username">Username:</label>
-			<input type="text" id="username" name="username" placeholder="Enter your username">
+			<label for="username">User Email:</label>
+			<input type="text" id="email" name="email" placeholder="Enter your Email">
 
 			<label for="password">Password:</label>
 			<input type="password" id="password" name="password" placeholder="Enter your password">

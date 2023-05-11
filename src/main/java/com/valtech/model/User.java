@@ -1,5 +1,9 @@
 package com.valtech.model;
 
+import java.util.List;
+
+import org.springframework.security.core.GrantedAuthority;
+
 public class User {
 	
 	private int userId;
@@ -18,6 +22,9 @@ public class User {
 		this.password = password;
 		this.email = email;
 		this.role = role;
+	}
+	public User(String username2, String password2, List<GrantedAuthority> authorities) {
+		// TODO Auto-generated constructor stub
 	}
 	public int getUserId() {
 		return userId;

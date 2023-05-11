@@ -1,24 +1,84 @@
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>  
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>  
+<html>
+<head>
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 
-		<h1>Add New Product</h1>
+<!-- Bootstrap JS -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+<meta charset="ISO-8859-1">
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-body">
+          <h1 class="text-center mb-4">Add New Manager</h1>
+          <form:form method="post" action="save">  
+            <div class="form-group">
+              <label for="userId">User Id:</label>
+              <form:input path="userId" id="userId" class="form-control" />
+            </div>  
+            <div class="form-group">
+              <label for="username">User Name:</label>
+              <form:input path="username" id="username" class="form-control" />
+            </div> 
+            <div class="form-group">
+              <label for="password">Password:</label>
+              <form:input path="password" id="password" class="form-control" />
+            </div> 
+            <div class="form-group">
+              <label for="email">Email:</label>
+              <form:input path="email" id="email" class="form-control" />
+            </div> 
+            <div class="form-group">
+              <label for="role">Role:</label>
+              <form:input path="role" id="role" class="form-control" />
+            </div> 
+            <div class="form-group text-center">
+              <button type="submit" class="btn btn-primary btn-block mt-4">Save</button>  
+            </div>  
+          </form:form>  
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</head>
+</html>
+
+
+
+
+
+
+
+
+
+
+	<%-- 	<h1>Add New Manager</h1>
        <form:form method="post" action="save">  
       	<table >  
          <tr>  
-          <td>Product Name : </td> 
-          <td><form:input path="Product_name"  /></td>
+          <td>User Id : </td> 
+          <td><form:input path="userId"  /></td>
          </tr>  
          <tr>  
-          <td>Description :</td>  
-          <td><form:input path="description" /></td>
+          <td>User Name :</td>  
+          <td><form:input path="username" /></td>
          </tr> 
          <tr>  
-          <td>Price :</td>  
-          <td><form:input path="price" /></td>
+          <td>Password :</td>  
+          <td><form:input path="password" /></td>
          </tr> 
           <tr>  
-          <td>Quantity :</td>  
-          <td><form:input path="Pquantity" /></td>
+          <td>Email :</td>  
+          <td><form:input path="email" /></td>
+         </tr> 
+         <tr>  
+          <td>Role :</td>  
+          <td><form:input path="role" /></td>
          </tr> 
          <tr>  
           <td> </td>  
@@ -26,8 +86,4 @@
          </tr>  
         </table>  
        </form:form>  
-           <!--    private int product_id;
-	private String Product_name;
-	private String description;
-	private float price;
-	private int Pquantity; -->
+	 --%>

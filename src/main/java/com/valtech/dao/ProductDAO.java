@@ -10,7 +10,6 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 
 import com.valtech.model.Product;
-import com.valtech.model.User;
 
 public class ProductDAO {
     
