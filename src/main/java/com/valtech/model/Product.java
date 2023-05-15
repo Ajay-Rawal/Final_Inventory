@@ -8,12 +8,16 @@ public class Product {
 	private float price;
 	private int Pquantity;
 	private int Cid;
+	private int userId;
 	public Product() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
+	
+	
 
-	public Product(int product_id, String product_name, String description, float price, int pquantity, int cid) {
+public Product(int product_id, String product_name, String description, float price, int pquantity, int cid,
+			int userId) {
 		super();
 		this.product_id = product_id;
 		this.Product_name = product_name;
@@ -21,7 +25,23 @@ public class Product {
 		this.price = price;
 		this.Pquantity = pquantity;
 		this.Cid = cid;
+		this.userId = userId;
 	}
+
+
+
+
+	public int getUserId() {
+	return userId;
+}
+
+
+
+public void setUserId(int userId) {
+	this.userId = userId;
+}
+
+
 
 	public int getProduct_id() {
 		return product_id;

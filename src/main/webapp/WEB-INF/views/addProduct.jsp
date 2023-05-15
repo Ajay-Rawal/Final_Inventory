@@ -86,6 +86,8 @@
 			<form:input path="Pquantity" id="pquantity" />
 			<label for="cid">Category ID:</label>
 			<form:input path="Cid" id="cid" />
+			<label for="userId">Manager ID:</label>
+			<form:input path="userId" id="userId" />
 			<input type="submit" value="Save" />
 		</form:form>
 	</div>

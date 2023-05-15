@@ -98,11 +98,7 @@
 <body>
 	<h1>Warehouse List</h1>
 
-	<form action="/Inventory/searchManager" method="GET">
-		<label for="user_Id">Manager ID:</label>
-		<input type="text" id="userId" name="userId">
-		<button type="submit">Search</button>
-	</form>
+	
 
 	<table>
 		<thead>
@@ -111,8 +107,9 @@
 				<th>Warehouse name</th>
 				<th>Warehouse address</th>
 				<th>Manager Id </th>
-				<th>Phone inventory</th>
-				<th>Laptop inventory</th>
+				<!--  <th>Phone inventory</th>
+				<th>Laptop inventory</th>  -->
+				<th>Inventory</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -122,10 +119,34 @@
 					<td>${war.wname}</td>
 					<td>${war.waddress}</td>
 					<td>${war.userId}</td>
-					<td><a href="phoneList/">Phone</a></td>
-					<td><a href="laptopList/">Laptop</a></td>
+				<%-- 	 <td><a href="phoneList/${war.userId}">Phone</a></td>
+					<td><a href="laptopList/${war.userId}">Laptop</a></td>  --%>
+					<td><a href="inventory/${war.userId}">View Inventory</a></td>
 				</tr>
 			</c:forEach>
+		
+			
+	</tbody>
+	</table>
+		
+			<br>
+				
+			<br>
+	<form action="/Inventory/searchManager" method="GET">
+		<label for="user_Id">Manager ID:</label>
+		<input type="text" id="userId" name="userId">
+		<button type="submit">Search</button>		
+		<br>			
+	</form>
+	
+	<form action="/Inventory/search" method="GET">
+  <label for="productId">Product ID:</label>
+  <input type="text" id="product_id" name="product_id">
+  <button type="submit">Search</button>
+</form>
+	</body>
+	</html>
+
     
     
     

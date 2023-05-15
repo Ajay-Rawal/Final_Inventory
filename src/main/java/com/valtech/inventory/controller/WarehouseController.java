@@ -41,7 +41,7 @@ public class WarehouseController {
 	}
 	
 	
-	@RequestMapping("/phoneList")
+	@RequestMapping("/phoneList/{userId}")
 	public String getAllProductsphone(Model m) {
 		List<Product> list = productDAO.getAllProductsphone();
 		m.addAttribute("list", list);
@@ -49,7 +49,26 @@ public class WarehouseController {
 		return "phoneList";
 	
 }
-	@RequestMapping("/laptopList")
+	
+
+	@RequestMapping("/inventory")
+	public String getAllProductss(Model m) {
+		List<Product> list = productDAO.getAllProducts();
+		m.addAttribute("list", list);
+		System.out.println("list of Product displayed");
+		return "inventory";
+	
+}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	@RequestMapping("/laptopList/{userId}")
 	public String getAllProductlaptop(Model m) {
 		List<Product> list = productDAO.getAllProductlaptop();
 		m.addAttribute("list", list);
@@ -58,6 +77,30 @@ public class WarehouseController {
 		
 		
 }
+	
+//	@RequestMapping("/phoneList2")
+//	public String getAllProductsphonem2(Model m) {
+//		List<Product> list = productDAO.getAllProductsphonem2();
+//		m.addAttribute("list", list);
+//		System.out.println("list of Product displayed");
+//		return "phoneList2";
+//	
+//}
+//	@RequestMapping("/laptopList2")
+//	public String getAllProductlaptopm2(Model m) {
+//		List<Product> list = productDAO.getAllProductlaptopm2();
+//		m.addAttribute("list", list);
+//		System.out.println("list of Product displayed");
+//		return "laptopList2";
+//		
+//		
+//}
+//	
+	
+	
+	
+	
+	
 	
 	
 	@RequestMapping(value = "/searchManager", method = RequestMethod.GET)

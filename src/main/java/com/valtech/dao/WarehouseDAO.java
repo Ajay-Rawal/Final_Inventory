@@ -9,6 +9,7 @@ import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 
+import com.valtech.model.Product;
 import com.valtech.model.User;
 import com.valtech.model.Warehouse;
 
@@ -47,6 +48,42 @@ public class WarehouseDAO {
 	
 	
 
+//	public List<Product> getProductByuserId(int userId) {
+//
+//		String sql = "SELECT * FROM product WHERE userId = ?";
+//
+//		return jdbcTemplate.query(sql, new Object[] { userId }, new ProductRowMapper());
+//
+//		}
+//	
+//		class ProductRowMapper implements RowMapper<Product> {
+//
+//		@Override
+//
+//		public Product mapRow(ResultSet rs, int rowNum) throws SQLException {
+//
+//			Product product = new Product();
+//
+//			product.setProduct_id(rs.getInt(1));
+//
+//			product.setProduct_name(rs.getString(2));
+//
+//			product.setDescription(rs.getString(3));
+//
+//			product.setPrice(rs.getFloat(4));
+//
+//			product.setUserId(rs.getInt(5));
+//
+//			product.setPquantity(rs.getInt(6));
+//
+//			product.setCid(rs.getInt(7));
+//
+//		return product;
+//
+//		}
+		
+	
+	
 	public Warehouse getWarehouseById(int id) {
 		String sql = "SELECT * FROM warehouse WHERE Wid=?";
 		Warehouse warehouse = jdbcTemplate.queryForObject(sql, new Object[] { id },
@@ -71,3 +108,4 @@ public class WarehouseDAO {
 		jdbcTemplate.update(sql, id);
 	}
 }
+

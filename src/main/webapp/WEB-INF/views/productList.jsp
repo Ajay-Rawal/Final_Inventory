@@ -14,7 +14,15 @@
 
 	<div class="container mt-5">
 		<h1 class="text-center mb-5">Product List</h1>
-
+	
+	 <form action="/Inventory/search" method="GET">
+  <label for="productId">Product ID:</label>
+  <input type="text" id="product_id" name="product_id">
+  <button type="submit">Search</button>
+</form>
+	
+	
+	
 		<table class="table table-bordered">
 			<thead>
 				<tr>
@@ -24,6 +32,7 @@
 					<th>Price</th>
 					<th>Quantity</th>
 					<th>Category Id</th>
+					<th>User Id</th>
 					<th>Edit</th>
 					<th>Delete</th>
 				</tr>
@@ -37,6 +46,7 @@
 						<td>${product.price}</td>
 						<td>${product.pquantity}</td>
 						<td>${product.cid}</td>
+						<td>${product.userId}</td> 
 						<td><a href="editProduct/${product.product_id}" class="btn btn-primary">Edit</a></td>
 						<td><a href="deleteproduct/${product.product_id}" class="btn btn-danger">Delete</a></td>
 					</tr>
