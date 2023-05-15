@@ -7,23 +7,31 @@ public class Warehouse {
 	private String Waddress;
 	private int product_id;
 	private int inventory_id;
+	private int userId;
 	
 	public Warehouse() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	
-
-	public Warehouse(int wid, String wname, String waddress, int product_id, int inventory_id) {
+	public Warehouse(int wid, String wname, String waddress, int product_id, int inventory_id, int userId) {
 		super();
 		this.Wid = wid;
 		this.Wname = wname;
 		this.Waddress = waddress;
 		this.product_id = product_id;
 		this.inventory_id = inventory_id;
+		this.userId = userId;
 	}
 
+	public int getUserId() {
+		return userId;
+	}
+
+
+	public void setUserId(int userId) {
+		this.userId = userId;
+	}
 
 
 	public int getProduct_id() {
@@ -79,10 +87,8 @@ public class Warehouse {
 	@Override
 	public String toString() {
 		return "Warehouse [Wid=" + Wid + ", Wname=" + Wname + ", Waddress=" + Waddress + ", product_id=" + product_id
-				+ ", inventory_id=" + inventory_id + "]";
+				+ ", inventory_id=" + inventory_id + ", userId=" + userId + "]";
 	}
-
-	
 	
 
 }

@@ -57,6 +57,7 @@ uri="http://www.springframework.org/tags/form" prefix="form"%>
     </style>
   </head>
   <body>
+  <img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.pexels.com%2Fsearch%2Finventory%2F&psig=AOvVaw3pcut7tZKrWg3UcrcsKLxc&ust=1683969245726000&source=images&cd=vfe&ved=0CA4QjRxqFwoTCPiYscG47_4CFQAAAAAdAAAAABAD" alt="My Image">
     <form name="submitForm" method="POST" action="loginCheck">
       <h1>Login Page</h1>
       <table>

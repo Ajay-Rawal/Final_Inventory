@@ -41,9 +41,9 @@ public class UserDao {
 		}
 	
 		
-		public User getUserbyUserName(String username) {
+		public User getUserbyUserName(int userId) {
 			String sql = "SELECT * FROM user WHERE userId = ?";
-			User user = jdbcTemplate.queryForObject(sql, new Object[] { username }, new BeanPropertyRowMapper<User>(User.class));
+			User user = jdbcTemplate.queryForObject(sql, new Object[] { userId }, new BeanPropertyRowMapper<User>(User.class));
 			return user;
 		}
 		

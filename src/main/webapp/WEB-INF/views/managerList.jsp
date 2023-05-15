@@ -4,7 +4,7 @@
     
      <%@page isELIgnored="false"%>
      <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-     <!DOCTYPE html>
+    <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
@@ -13,7 +13,7 @@
 <style>
 /* Style the table header */
 table th {
-  background-color: #5a5a5a;
+  background-color: #336699;
   color: #fff;
   font-weight: bold;
   text-align: left;
@@ -30,7 +30,7 @@ table td {
 a.edit-link, a.delete-link {
   display: inline-block;
   padding: 5px 10px;
-  background-color: #5a5a5a;
+  background-color: #336699;
   color: #fff;
   text-decoration: none;
   border-radius: 5px;
@@ -38,22 +38,23 @@ a.edit-link, a.delete-link {
 }
 
 a.edit-link:hover, a.delete-link:hover {
-  background-color: #333;
+  background-color: #204d74;
 }
 
 a.add-link {
   display: block;
-  background-color: #4CAF50;
+  background-color: #4285f4;
   color: white;
   padding: 10px;
   text-align: center;
   text-decoration: none;
   border-radius: 5px;
   margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 a.add-link:hover {
-  background-color: #3e8e41;
+  background-color: #3367d6;
 }
 </style>
 </head>
@@ -69,7 +70,9 @@ a.add-link:hover {
   <thead>
     <tr>
       <th>User ID</th>
+      <th>User Name</th>
       <th>Password</th>
+        
       <th>Email</th>
       <th>Role</th>
       <th>Edit</th>
@@ -80,6 +83,7 @@ a.add-link:hover {
     <c:forEach var="user" items="${list}">
       <tr>
         <td>${user.userId}</td>
+        <td>${user.username}</td>
         <td>${user.password}</td>
         <td>${user.email}</td>
         <td>${user.role}</td>
@@ -93,10 +97,11 @@ a.add-link:hover {
 
 <br>
 <br>
-
+<a href="warehouseList" class="add-link">View Wahehouse</a>
   
 </body>
 </html>
+
      
      
      
