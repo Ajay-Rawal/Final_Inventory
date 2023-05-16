@@ -85,43 +85,7 @@ public class ProductDAO {
  	        }  
  	    });
  	}
- 	
 
- 	
- 	
-// 	public List<Product> getAllProductlaptopm2(){  
-// 	    return jdbcTemplate.query("select * from Product where Cid=2 userId=14",new RowMapper<Product>(){  
-// 	        public Product mapRow(ResultSet rs, int row) throws SQLException {  
-// 	        	Product li=new Product();  
-// 	            li.setProduct_id(rs.getInt(1));
-// 	            li.setProduct_name(rs.getString(2));
-// 	            li.setDescription(rs.getString(3));
-// 	            li.setPrice(rs.getFloat(4));
-// 	            li.setPquantity(rs.getInt(5));
-// 	            li.setCid(rs.getInt(6));
-// 	          
-// 	            return li;  
-// 	        }  
-// 	    });
-// 	}
-// 	
-// 	public List<Product> getAllProductsphonem2(){  
-// 	    return jdbcTemplate.query("select * from Product where Cid=1 and userId=14",new RowMapper<Product>(){  
-// 	        public Product mapRow(ResultSet rs, int row) throws SQLException {  
-// 	        	Product li=new Product();  
-// 	            li.setProduct_id(rs.getInt(1));
-// 	            li.setProduct_name(rs.getString(2));
-// 	            li.setDescription(rs.getString(3));
-// 	            li.setPrice(rs.getFloat(4));
-// 	            li.setPquantity(rs.getInt(5));
-// 	            li.setCid(rs.getInt(6));
-// 	          
-// 	            return li;  
-// 	        }  
-// 	    });
-// 	}
-// 	
- 	
  
  	
  	

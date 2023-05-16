@@ -34,12 +34,13 @@ public class UserControler {
 	}
 
 	// deleteing the user manager
-	@RequestMapping(value = "/deleteuser/{id}", method = RequestMethod.GET)
+	@RequestMapping(value = "/deleteUser/{id}", method = RequestMethod.GET)
 	public String delete(@PathVariable int id) {
 		userDao.deleteUser(id);
 		return "redirect:/managerList";
 	}
-
+	
+	
 	
 	
 	  @RequestMapping("/addManager")  

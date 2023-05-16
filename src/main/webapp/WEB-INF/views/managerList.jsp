@@ -4,7 +4,173 @@
     
      <%@page isELIgnored="false"%>
      <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-    <!DOCTYPE html>
+     
+     <!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Manager List</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f1f1f1;
+        margin: 0;
+        padding: 20px;
+    }
+
+    h1 {
+        color: #333;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 20px;
+    }
+    
+    
+    form {
+			margin-bottom: 30px;
+			text-align: center;
+		}
+
+		label {
+			font-size: 18px;
+			font-weight: bold;
+			color: #444;
+			margin-right: 10px;
+		}
+
+		input[type=text] {
+			padding: 5px;
+			border: 1px solid #ccc;
+			border-radius: 5px;
+			font-size: 16px;
+			width: 200px;
+			margin-right: 10px;
+		}
+
+		button[type=submit] {
+			background-color: #4CAF50;
+			color: white;
+			border: none;
+			border-radius: 5px;
+			padding: 8px 16px;
+			font-size: 16px;
+			cursor: pointer;
+			transition: background-color 0.3s;
+		}
+
+		button[type=submit]:hover {
+			background-color: #3e8e41;
+		}
+
+    th, td {
+        padding: 10px;
+        text-align: left;
+        border: 1px solid #ccc;
+    }
+
+    th {
+        background-color: #f1f1f1;
+        font-weight: bold;
+    }
+
+    tr:nth-child(even) {
+        background-color: #f9f9f9;
+    }
+
+    a {
+        text-decoration: none;
+        color: #333;
+    }
+
+    .btn {
+        display: inline-block;
+        padding: 8px 16px;
+        background-color: #4CAF50;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+        font-size: 14px;
+        border-radius: 4px;
+        transition: background-color 0.3s;
+    }
+    
+    h4 {
+			margin-top: 50px;
+			margin-bottom: 30px;
+			font-size: 36px;
+			text-align: center;
+			color: #444;
+		}
+
+    .btn:hover {
+        background-color: #45a049;
+    }
+
+    .add-link {
+        margin-left: 10px;
+    }
+
+    .container {
+        max-width: 800px;
+        margin: 0 auto;
+    }
+</style>
+</head>
+<body>
+<div class="container">
+    <h1>Manager List</h1>
+    <br>
+    
+    
+   
+<br>
+
+
+    <table>
+        <tr>
+            <th>User ID</th>
+            <th>Password</th>
+            <th>Email</th>
+            <th>Role</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+
+        <c:forEach var="user" items="${list}">
+            <tr>
+                <td>${user.userId}</td>
+                <td>${user.password}</td>
+                <td>${user.email}</td>
+                <td>${user.role}</td>
+                <td><a href="editManager/${user.userId}" class="btn">Edit</a></td>
+                <td><a href="deleteUser/${user.userId}" class="btn">Delete</a></td>
+            </tr>
+        </c:forEach>
+    </table>
+
+    <a href="addManager" class="btn">Add New Manager</a>
+    <a href="warehouseList" class="btn add-link">View Warehouse</a>
+</div>
+
+
+<br>
+<br>
+<h4>Search Product</h4>
+<form action="/Inventory/search" method="GET">
+  <label for="productId">Product ID:</label>
+  <input type="text" id="product_id" name="product_id">
+  <button type="submit">Search</button>
+</form>
+</body>
+</html>
+     
+     
+     
+     
+   <%--  <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
@@ -101,7 +267,7 @@ a.add-link:hover {
 <a href="warehouseList" class="add-link">View Wahehouse</a>
   
 </body>
-</html>
+</html> --%>
 
      
      
@@ -136,7 +302,9 @@ a.add-link:hover {
 </c:forEach>
 </table>
 <br/>
+<br>
+<br>
 <a href="addManager">Add New Manager</a>
-
+<a href="warehouseList" class="add-link">View Wahehouse</a>
 </body>
 </html> --%>

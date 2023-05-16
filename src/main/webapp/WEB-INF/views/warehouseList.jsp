@@ -132,6 +132,9 @@
 			<br>
 				
 			<br>
+			
+			<!-- <div class="container"> -->
+  
 	<form action="/Inventory/searchManager" method="GET">
 		<label for="user_Id">Manager ID:</label>
 		<input type="text" id="userId" name="userId">
@@ -143,7 +146,8 @@
   <label for="productId">Product ID:</label>
   <input type="text" id="product_id" name="product_id">
   <button type="submit">Search</button>
-</form>
+</form> 
+<!-- </div> -->
 	</body>
 	</html>
 
@@ -215,3 +219,18 @@
   
 </body>
 </html> --%>
+
+<!--   <h1>Search Manager or Product</h1>
+
+    <form action="/Inventory/search" method="GET">
+        <label>
+            <input type="radio" name="userId" value="managerId" > Search by Manager ID
+        </label>
+        <label>
+            <input type="radio" name="product_id" value="productId"> Search by Product ID
+        </label>
+        <br>
+        <br>
+        <input type="text" name="searchValue" placeholder="">
+        <button type="submit">Search</button>
+    </form> -->
