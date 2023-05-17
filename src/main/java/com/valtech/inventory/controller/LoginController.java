@@ -1,5 +1,6 @@
 package com.valtech.inventory.controller;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,6 +10,7 @@ import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -47,7 +49,11 @@ public class LoginController{
 	            httpSession.setAttribute("user", loggedInUser);
 
 	            if (loggedInUser.getRole().equals("MANAGER")) {
-	                return "redirect:/productList";
+	                return "redirect:/mlogin/"+loggedInUser.getUserId();
+	                
+//	                if (loggedInUser.getRole().equals("MANAGER")) {
+//		                return "redirect:/productList";
+//	                
 	            } else if (loggedInUser.getRole().equals("ADMIN")) {
 	                return "redirect:/managerList";
 	            } else {
@@ -64,13 +70,6 @@ public class LoginController{
 	    }
 	}
 	
-	
-//	 @PostMapping("/logout")
-//	    public String logout(HttpServletRequest request) {
-//	        // Perform logout actions here
-//	        request.getSession().invalidate();
-//	        return "redirect:/login"; // Redirect to the login page after logout
-//	    }
 
 
 }

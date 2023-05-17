@@ -32,7 +32,7 @@
 					<th>Price</th>
 					<th>Quantity</th>
 					<th>Category Id</th>
-					<th>User Id</th>
+					 <th>User Id</th>
 					<th>Edit</th>
 					<th>Delete</th>
 				</tr>
@@ -46,7 +46,7 @@
 						<td>${product.price}</td>
 						<td>${product.pquantity}</td>
 						<td>${product.cid}</td>
-						<td>${product.userId}</td> 
+						<td>${product.userId}</td>  
 						<td><a href="editProduct/${product.product_id}" class="btn btn-primary">Edit</a></td>
 						<td><a href="deleteproduct/${product.product_id}" class="btn btn-danger">Delete</a></td>
 					</tr>

@@ -3,12 +3,25 @@
 <head>
   <title>Login Page</title>
   <style>
+ 
+       body {
+            background-image: url("https://images.pexels.com/photos/4483610/pexels-photo-4483610.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+            background-repeat: no-repeat;
+            background-size: cover;
+            /* Additional CSS properties */
+            
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+  
     .login-container {
-      width: 350px;
-      margin: 0 auto;
-      padding: 35px;
-      border: 1px solid #ccc;
-      border-radius: 6px;
+   background-color: white;
+            width: 350px;
+            padding: 35px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
     }
 
     .login-container h1 {
@@ -51,6 +64,7 @@
   </style>
 </head>
 <body>
+
   <div class="login-container">
     <h1>Login Page</h1>
     <form name="submitForm" method="POST" action="loginCheck">
@@ -77,7 +91,7 @@
 </html>
 
 
-
+	
 
 
 

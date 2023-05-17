@@ -69,7 +69,7 @@ public class ProductDAO {
  	}
  	
  	public List<Product> getAllProductsphone(){  
- 	    return jdbcTemplate.query("select * from Product where Cid=1 ",new RowMapper<Product>(){  
+ 	    return jdbcTemplate.query("select * from Product where Cid=1",new RowMapper<Product>(){  
  	        public Product mapRow(ResultSet rs, int row) throws SQLException {  
  	        	Product li=new Product();  
  	            li.setProduct_id(rs.getInt(1));
@@ -95,12 +95,27 @@ public class ProductDAO {
         jdbcTemplate.update(sql, product.getProduct_name(), product.getDescription(), product.getPrice(), product.getPquantity(), product.getProduct_id());
     }
     
+    
+    // UPDATE for manager
+    public void updateProductForManager(Product product) {
+        String sql = "UPDATE product SET product_name=?, description=?, price=?, Pquantity=? ,userId=? WHERE product_id=?";
+        jdbcTemplate.update(sql, product.getProduct_name(), product.getDescription(), product.getPrice(), product.getPquantity(),product.getUserId(), product.getProduct_id());
+    }
+    
+    
+    
+    
+    
   //save method
   		public void save(Product product) {
-  			String sql = "INSERT INTO product (product_id,product_name, description, price, Pquantity,Cid) VALUES (?,?, ?, ?, ?,?)";
-  	        jdbcTemplate.update(sql, product.getProduct_id(),product.getProduct_name(), product.getDescription(), product.getPrice(), product.getPquantity(),product.getCid());
+  			String sql = "INSERT INTO product (product_id,product_name, description, price, Pquantity,Cid,userId) VALUES (?,?,?,?,?,?,?)";
+  	        jdbcTemplate.update(sql, product.getProduct_id(),product.getProduct_name(), product.getDescription(), product.getPrice(), product.getPquantity(),product.getCid(),product.getUserId());
   	    }
     
+  		
+  		
+  		
+  		
     // DELETE
     public void deleteProduct(int product_id) {
         String sql = "DELETE FROM product WHERE product_id=?";

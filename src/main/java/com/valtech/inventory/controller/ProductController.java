@@ -44,6 +44,14 @@ public class ProductController {
 			m.addAttribute("command", product);
 			return "editProduct";
 		}
+		
+		
+		@RequestMapping(value = "/mlogin/editProductForManager/{id}")
+		public String editForManager(@PathVariable int id, Model m) {
+			Product product = productDAO.getProductById(id);
+			m.addAttribute("command", product);
+			return "editProductForManager";
+		}
 
 		@RequestMapping(value = "/editsaveproduct", method = RequestMethod.POST)
 		public String editsave(@ModelAttribute("product") Product product) {
@@ -51,18 +59,41 @@ public class ProductController {
 			return "redirect:/productList";
 		}
 		
+		
+		@RequestMapping(value = "/mlogin/editProductForManager/editsaveproductForManager", method = RequestMethod.POST)
+		public String editsaveForManager(@ModelAttribute("product") Product product) {
+			productDAO.updateProduct(product);			
+			return "redirect:/mlogin/"+product.getUserId();
+		}
+		
+		
 		 @RequestMapping("/addProduct")  
 		    public String showform(Model m){  
 		    	m.addAttribute("command", new Product());
 		    	return "addProduct"; 
 		    }  
+
+		 
+		 @RequestMapping("mlogin/addProductForManager")  
+		    public String showformManager(Model m){  
+		    	m.addAttribute("command", new Product());
+		    	return "addProductForManager"; 
+		    } 
 		
 		
-		
+
 		@RequestMapping(value = "/saveproduct", method = RequestMethod.POST)
 		public String save(@ModelAttribute("product") Product product) {
 			productDAO.save(product);
 			return "redirect:/productList";// will redirect to viewemp request mapping
+
+		}
+		
+		 	
+		@RequestMapping(value = "mlogin/saveproductForManager", method = RequestMethod.POST)
+		public String saveForManager(@ModelAttribute("product") Product product) {
+			productDAO.save(product);
+			return "redirect:/mlogin/"+product.getUserId();// will redirect to viewemp request mapping
 
 		}
 		
@@ -74,6 +105,14 @@ public class ProductController {
 		}
 		
 		
+		@RequestMapping(value = "mlogin/deleteproductForManager/{id}", method = RequestMethod.GET)
+		public String deleteForManager(@PathVariable int id, @ModelAttribute("product") Product product) {
+			Product p= productDAO.getProductById(id);
+			productDAO.deleteProduct(id);
+			return "redirect:/mlogin/"+p.getUserId();
+		}
+		
+	
 		@RequestMapping(value = "/search", method = RequestMethod.GET)
 		public String search(@RequestParam("product_id") int product_id, Model model) {
 		  // search for the product by ID
@@ -86,22 +125,32 @@ public class ProductController {
 		}
 		
 		@RequestMapping("/inventory/{userId}")
-
-		public String viewBikesUnderServiceManager(@PathVariable int userId, Model model) {
-
+		public String viewProductUnderUser(@PathVariable int userId, Model model) {
 		User user = userDao.getUserbyUser(userId);
 		System.out.println(userId);
-
 		List<Product> product = (List<Product>) productDAO.getProductByuserId(userId);
-
 		model.addAttribute("user", user);
-
 		model.addAttribute("product", product);
-		
 		return "inventory";
 
 		}
+		
 
+		
+		@RequestMapping("/mlogin/{userId}")
+		public String viewProductUndermanger(@PathVariable int userId, Model model) {
+		User user = userDao.getUserbyUser(userId);
+		System.out.println(userId);
+		List<Product> product = (List<Product>) productDAO.getProductByuserId(userId);
+		model.addAttribute("user", user);
+		model.addAttribute("product", product);
+		return "mlogin";
+
+		
+		
+		
+	
+		}
 		
 	
 }

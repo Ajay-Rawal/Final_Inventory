@@ -32,6 +32,8 @@
 					<th>Price</th>
 					<th>Category Id</th>			
 					<th>User Id</th>
+					<th>Edit </th>
+					<th>Delete </th>
 				
 					<th>Quantity</th>
 				</tr>
@@ -46,10 +48,15 @@
 						<td>${product.pquantity}</td>
 						<td>${product.cid}</td>
 						<td>${product.userId}</td> 
+						<td><a href="editProductForManager/${product.product_id}" class="btn btn-primary">Edit</a></td>
+						<td><a href="deleteproductForManager/${product.product_id}" class="btn btn-danger">Delete</a></td>
 					</tr>
 				</c:forEach>
 			</tbody>
 		</table>
+		<div class="text-center mt-5">
+			<a href="addProductForManager" class="btn btn-success">Add New item</a>
+		</div>
 	</div>
 
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

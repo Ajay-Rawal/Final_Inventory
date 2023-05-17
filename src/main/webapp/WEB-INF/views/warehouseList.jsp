@@ -107,7 +107,7 @@
 				<th>Warehouse name</th>
 				<th>Warehouse address</th>
 				<th>Manager Id </th>
-				<!--  <th>Phone inventory</th>
+				<!--   <th>Phone inventory</th>
 				<th>Laptop inventory</th>  -->
 				<th>Inventory</th>
 			</tr>
@@ -120,7 +120,7 @@
 					<td>${war.waddress}</td>
 					<td>${war.userId}</td>
 				<%-- 	 <td><a href="phoneList/${war.userId}">Phone</a></td>
-					<td><a href="laptopList/${war.userId}">Laptop</a></td>  --%>
+					<td><a href="laptopList/${war.userId}">Laptop</a></td> --%>
 					<td><a href="inventory/${war.userId}">View Inventory</a></td>
 				</tr>
 			</c:forEach>
@@ -142,11 +142,7 @@
 		<br>			
 	</form>
 	
-	<form action="/Inventory/search" method="GET">
-  <label for="productId">Product ID:</label>
-  <input type="text" id="product_id" name="product_id">
-  <button type="submit">Search</button>
-</form> 
+	
 <!-- </div> -->
 	</body>
 	</html>

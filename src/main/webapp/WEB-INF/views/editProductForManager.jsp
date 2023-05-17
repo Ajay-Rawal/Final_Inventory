@@ -1,7 +1,6 @@
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>  
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%> 
 
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,7 +12,7 @@
 		<div class="row">
 			<div class="col-md-6 offset-md-3">
 				<h1 class="text-center mb-4">Edit Product</h1>
-				<form:form method="POST" action="/Inventory/editsaveproduct" class="form">
+				<form:form method="POST" action="editsaveproductForManager" class="form">
 					<div class="form-group">
 						<form:hidden path="product_id" />
 					</div>

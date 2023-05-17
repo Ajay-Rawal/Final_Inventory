@@ -68,7 +68,7 @@
 			<th>Delete</th> -->
 		</tr>
 
-		<c:forEach var="product" items="${list}">
+		<c:forEach var="product" items="${product}">
 			<tr>
 				<td>${product.product_id}</td>
 				<td>${product.product_name}</td>
@@ -76,8 +76,7 @@
 				<td>${product.price}</td>
 				<td>${product.pquantity}</td>
 				<td>${product.cid}</td>
-			<%-- 	<td><a href="editProduct/${product.product_id}">Edit</a></td>
-				<td><a href="deleteproduct/${product.product_id}">Delete</a></td> --%>
+			
 			</tr>
 		</c:forEach>
 	</table>

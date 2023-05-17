@@ -104,6 +104,16 @@
 			text-align: center;
 			color: #444;
 		}
+		p {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin-top: 50px;
+  margin-right: 30px;
+  font-size: 36px;
+  color: #444;
+}
+
 
     .btn:hover {
         background-color: #45a049;
@@ -122,6 +132,7 @@
 <body>
 <div class="container">
     <h1>Manager List</h1>
+    <p><a href="/Inventory/login">Logout</a></p>
     <br>
     
     

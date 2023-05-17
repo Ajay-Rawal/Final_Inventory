@@ -25,62 +25,7 @@ public class WarehouseDAO {
 		return warehouses;
 	}
 	
-//	public List<User> getWarehouse(){  
-//	    return jdbcTemplate.query("SELECT * FROM warehouse",new RowMapper<User>(){  
-//	        public Warehouse mapRow(ResultSet rs, int row) throws SQLException {  
-//	        	Warehouse li=new Warehouse();
-//	        	li.setWid(rs.getInt(1));
-//	        	li.setWname(rs.getString(2));
-//	        	li.setWaddress(rs.getString(3));
-//	        	li.set
-//	            User li=new User();  
-//	            li.setUserId(rs.getInt(1));
-//	            li.setUsername(rs.getString(2));
-//            li.setPassword(rs.getString(3));
-//	            li.setEmail(rs.getString(4));
-//	            li.setRole(rs.getString(5));
-//	          
-//	            return li;  
-//	        }  
-//	    });  
-//	
-//	}
-	
-	
 
-//	public List<Product> getProductByuserId(int userId) {
-//
-//		String sql = "SELECT * FROM product WHERE userId = ?";
-//
-//		return jdbcTemplate.query(sql, new Object[] { userId }, new ProductRowMapper());
-//
-//		}
-//	
-//		class ProductRowMapper implements RowMapper<Product> {
-//
-//		@Override
-//
-//		public Product mapRow(ResultSet rs, int rowNum) throws SQLException {
-//
-//			Product product = new Product();
-//
-//			product.setProduct_id(rs.getInt(1));
-//
-//			product.setProduct_name(rs.getString(2));
-//
-//			product.setDescription(rs.getString(3));
-//
-//			product.setPrice(rs.getFloat(4));
-//
-//			product.setUserId(rs.getInt(5));
-//
-//			product.setPquantity(rs.getInt(6));
-//
-//			product.setCid(rs.getInt(7));
-//
-//		return product;
-//
-//		}
 		
 	
 	

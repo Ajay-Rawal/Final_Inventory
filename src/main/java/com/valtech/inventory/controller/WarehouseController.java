@@ -41,31 +41,28 @@ public class WarehouseController {
 	}
 	
 	
+//	@RequestMapping("/inventory/{userId}")
+//	public String viewProductUnderUser(@PathVariable int userId, Model model) {
+//	User user = userDao.getUserbyUser(userId);
+//	System.out.println(userId);
+//	List<Product> product = (List<Product>) productDAO.getProductByuserId(userId);
+//	model.addAttribute("user", user);
+//	model.addAttribute("product", product);
+//	return "inventory";
+//
+//	}
+	
 	@RequestMapping("/phoneList/{userId}")
-	public String getAllProductsphone(Model m) {
-		List<Product> list = productDAO.getAllProductsphone();
-		m.addAttribute("list", list);
+	public String getAllProductsphone(@PathVariable int userId,  Model m) {
+		User user=userDao.getUserbyUser(userId);
+		List<Product> product = (List<Product>)productDAO.getAllProductsphone();
+		
+		m.addAttribute("user", user);
+		m.addAttribute("product", product);
 		System.out.println("list of Product displayed");
 		return "phoneList";
 	
 }
-	
-
-	@RequestMapping("/inventory")
-	public String getAllProductss(Model m) {
-		List<Product> list = productDAO.getAllProducts();
-		m.addAttribute("list", list);
-		System.out.println("list of Product displayed");
-		return "inventory";
-	
-}
-	
-	
-	
-	
-	
-	
-	
 	
 	
 	@RequestMapping("/laptopList/{userId}")
@@ -73,34 +70,9 @@ public class WarehouseController {
 		List<Product> list = productDAO.getAllProductlaptop();
 		m.addAttribute("list", list);
 		System.out.println("list of Product displayed");
-		return "laptopList";
-		
-		
+		return "laptopList";		
+	
 }
-	
-//	@RequestMapping("/phoneList2")
-//	public String getAllProductsphonem2(Model m) {
-//		List<Product> list = productDAO.getAllProductsphonem2();
-//		m.addAttribute("list", list);
-//		System.out.println("list of Product displayed");
-//		return "phoneList2";
-//	
-//}
-//	@RequestMapping("/laptopList2")
-//	public String getAllProductlaptopm2(Model m) {
-//		List<Product> list = productDAO.getAllProductlaptopm2();
-//		m.addAttribute("list", list);
-//		System.out.println("list of Product displayed");
-//		return "laptopList2";
-//		
-//		
-//}
-//	
-	
-	
-	
-	
-	
 	
 	
 	@RequestMapping(value = "/searchManager", method = RequestMethod.GET)
@@ -110,11 +82,6 @@ public class WarehouseController {
 	  System.out.println("mList");
 	  return "mList";
 	}
-	
-	
-	
-	
-	
 	
 	@GetMapping("/warehouse/add")
 	public String showAddWarehouseForm(Model model) {
