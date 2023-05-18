@@ -119,8 +119,7 @@
 					<td>${war.wname}</td>
 					<td>${war.waddress}</td>
 					<td>${war.userId}</td>
-				<%-- 	 <td><a href="phoneList/${war.userId}">Phone</a></td>
-					<td><a href="laptopList/${war.userId}">Laptop</a></td> --%>
+			
 					<td><a href="inventory/${war.userId}">View Inventory</a></td>
 				</tr>
 			</c:forEach>
@@ -202,8 +201,9 @@
         <td>${war.wname}</td>
         <td>${war.waddress}</td>
         <td>${war.inventory_id}</td>
-        <td><a href="phoneList/" >Phone</a></td>
-        <td><a href="laptopList/" >Laptop</a></td>
+ 	 <td><a href="phoneList/${war.userId}">Phone</a></td>
+					<td><a href="laptopList/${war.userId}">Laptop</a></td>
+					<td><a href="inventory/${war.userId}">View Inventory</a></td>
       </tr>
     </c:forEach>     
 

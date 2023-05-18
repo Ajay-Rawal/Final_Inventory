@@ -62,8 +62,9 @@ public class ProductController {
 		
 		@RequestMapping(value = "/mlogin/editProductForManager/editsaveproductForManager", method = RequestMethod.POST)
 		public String editsaveForManager(@ModelAttribute("product") Product product) {
+			Product product2 =productDAO.getProductById(product.getProduct_id());
 			productDAO.updateProduct(product);			
-			return "redirect:/mlogin/"+product.getUserId();
+			return "redirect:/mlogin/"+product2.getUserId();
 		}
 		
 		

@@ -40,41 +40,7 @@ public class WarehouseController {
 		return "warehouseList";
 	}
 	
-	
-//	@RequestMapping("/inventory/{userId}")
-//	public String viewProductUnderUser(@PathVariable int userId, Model model) {
-//	User user = userDao.getUserbyUser(userId);
-//	System.out.println(userId);
-//	List<Product> product = (List<Product>) productDAO.getProductByuserId(userId);
-//	model.addAttribute("user", user);
-//	model.addAttribute("product", product);
-//	return "inventory";
-//
-//	}
-	
-	@RequestMapping("/phoneList/{userId}")
-	public String getAllProductsphone(@PathVariable int userId,  Model m) {
-		User user=userDao.getUserbyUser(userId);
-		List<Product> product = (List<Product>)productDAO.getAllProductsphone();
-		
-		m.addAttribute("user", user);
-		m.addAttribute("product", product);
-		System.out.println("list of Product displayed");
-		return "phoneList";
-	
-}
-	
-	
-	@RequestMapping("/laptopList/{userId}")
-	public String getAllProductlaptop(Model m) {
-		List<Product> list = productDAO.getAllProductlaptop();
-		m.addAttribute("list", list);
-		System.out.println("list of Product displayed");
-		return "laptopList";		
-	
-}
-	
-	
+
 	@RequestMapping(value = "/searchManager", method = RequestMethod.GET)
 	public String search(@RequestParam("userId") int userId, Model model) {
 	  User user = userDao.getUserbyUserName(userId);
@@ -125,3 +91,48 @@ public class WarehouseController {
 
 	
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//
+//
+//
+//@RequestMapping("/phoneList/{userId}")
+//public String getAllProductsphone(@PathVariable int userId,  Model m) {
+//	User user=userDao.getUserbyUser(userId);
+//	List<Product> product = (List<Product>)productDAO.getAllProductsphone();	
+//	m.addAttribute("user", user);
+//	m.addAttribute("product", product);
+//	System.out.println("list of Product displayed");
+//	return "phoneList";
+//
+//}
+//
+//
+//@RequestMapping("/laptopList/{userId}")
+//public String getAllProductlaptop(Model m) {
+//	List<Product> list = productDAO.getAllProductlaptop();
+//	m.addAttribute("list", list);
+//	System.out.println("list of Product displayed");
+//	return "laptopList";		
+//
+//}

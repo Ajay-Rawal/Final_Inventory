@@ -5,13 +5,21 @@
      <%@page isELIgnored="false"%>
      <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
      
-     <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Manager List</title>
 <style>
     body {
+
+            background-image: url("https://images.pexels.com/photos/4144294/pexels-photo-4144294.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+            background-repeat: no-repeat;
+            background-size: cover;
+            /* Additional CSS properties */
+            
+
+
         font-family: Arial, sans-serif;
         background-color: #f1f1f1;
         margin: 0;
@@ -19,13 +27,16 @@
     }
 
     h1 {
-        color: #333;
+        color: rgb(255, 255, 255);
+        text-align: center;
     }
 
     table {
         width: 100%;
         border-collapse: collapse;
         margin-bottom: 20px;
+        color: rgb(237, 58, 58);
+        background-color: #ffffff;
     }
     
     
@@ -37,7 +48,7 @@
 		label {
 			font-size: 18px;
 			font-weight: bold;
-			color: #444;
+			color: #060505;
 			margin-right: 10px;
 		}
 
@@ -51,7 +62,7 @@
 		}
 
 		button[type=submit] {
-			background-color: #4CAF50;
+			background-color: #e92f66;
 			color: white;
 			border: none;
 			border-radius: 5px;
@@ -62,13 +73,13 @@
 		}
 
 		button[type=submit]:hover {
-			background-color: #3e8e41;
+			background-color: #ef258a;
 		}
 
     th, td {
         padding: 10px;
         text-align: left;
-        border: 1px solid #ccc;
+        border: 1px solid #ffffff;
     }
 
     th {
@@ -88,7 +99,7 @@
     .btn {
         display: inline-block;
         padding: 8px 16px;
-        background-color: #4CAF50;
+        background-color: #eb2e3a;
         color: #fff;
         border: none;
         cursor: pointer;
@@ -102,7 +113,7 @@
 			margin-bottom: 30px;
 			font-size: 36px;
 			text-align: center;
-			color: #444;
+			color: #080707;
 		}
 		p {
   position: absolute;
@@ -110,13 +121,13 @@
   right: 0;
   margin-top: 50px;
   margin-right: 30px;
-  font-size: 36px;
+  font-size: 25px;
   color: #444;
 }
 
 
     .btn:hover {
-        background-color: #45a049;
+        background-color: #c92360;
     }
 
     .add-link {
@@ -130,9 +141,10 @@
 </style>
 </head>
 <body>
+<p><a href="/Inventory/login">Logout</a></p>
 <div class="container">
     <h1>Manager List</h1>
-    <p><a href="/Inventory/login">Logout</a></p>
+    
     <br>
     
     
@@ -177,7 +189,6 @@
 </form>
 </body>
 </html>
-     
      
      
      
