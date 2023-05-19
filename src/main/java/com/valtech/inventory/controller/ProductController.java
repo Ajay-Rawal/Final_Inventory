@@ -32,7 +32,6 @@ public class ProductController {
 	public String getAllProducts(Model m) {
 		List<Product> list = productDAO.getAllProducts();
 		m.addAttribute("list", list);
-		System.out.println("list of Product displayed");
 		return "productList";
 	
 }
@@ -50,6 +49,7 @@ public class ProductController {
 		public String editForManager(@PathVariable int id, Model m) {
 			Product product = productDAO.getProductById(id);
 			m.addAttribute("command", product);
+			m.addAttribute("userId",id);
 			return "editProductForManager";
 		}
 
@@ -75,9 +75,11 @@ public class ProductController {
 		    }  
 
 		 
-		 @RequestMapping("mlogin/addProductForManager")  
-		    public String showformManager(Model m){  
+		 @RequestMapping("mlogin/addProductForManager/{userId}")  
+		    public String showformManager(@PathVariable int userId, @ModelAttribute("product") Product product,Model m){  
 		    	m.addAttribute("command", new Product());
+		    	
+		    	m.addAttribute("userId", userId);
 		    	return "addProductForManager"; 
 		    } 
 		
@@ -114,16 +116,44 @@ public class ProductController {
 		}
 		
 	
+//		@RequestMapping(value = "/search", method = RequestMethod.GET)
+//		public String search(@RequestParam("product_id") int product_id, Model model) {
+//			try {
+//		  Product product = productDAO.getProductById(product_id);
+//		  model.addAttribute("product", product);
+//		  System.out.println("pList");
+//		  return "pList";
+//			}
+//			catch(Exception e) {
+//				return "error";
+//				
+//			}
+//		}
 		@RequestMapping(value = "/search", method = RequestMethod.GET)
-		public String search(@RequestParam("product_id") int product_id, Model model) {
-		  // search for the product by ID
-		  Product product = productDAO.getProductById(product_id);
-		  
-		  // add the product to the model
-		  model.addAttribute("product", product);
-		  System.out.println("pList");
-		  return "pList";
+		public String search(@RequestParam(value = "searchOption", required = false) String searchOption,
+		                     @RequestParam(value = "searchCriteria", required = false) String searchCriteria,
+		                     Model model) {
+		    try {
+		        if (searchOption != null && searchCriteria != null) {
+		            if (searchOption.equals("product_id")) {
+		                int product_id = Integer.parseInt(searchCriteria);
+		                Product product = productDAO.getProductById(product_id);
+		                model.addAttribute("product", product);
+		                return "pList";
+		            } else if (searchOption.equals("product_name")) {
+		                Product product = productDAO.getProductName(searchCriteria);
+		                model.addAttribute("product", product);
+		                return "pList";
+		            }
+		            
+		        }
+		        model.addAttribute("error", "Invalid search option");
+		        return "error";
+		    } catch (Exception e) {
+		        return "error";
+		    }
 		}
+
 		
 		@RequestMapping("/inventory/{userId}")
 		public String viewProductUnderUser(@PathVariable int userId, Model model) {
@@ -137,21 +167,51 @@ public class ProductController {
 		}
 		
 
-		
 		@RequestMapping("/mlogin/{userId}")
 		public String viewProductUndermanger(@PathVariable int userId, Model model) {
+			try {
 		User user = userDao.getUserbyUser(userId);
 		System.out.println(userId);
 		List<Product> product = (List<Product>) productDAO.getProductByuserId(userId);
 		model.addAttribute("user", user);
+		model.addAttribute("userId",userId);
+		System.out.println("Hi"+userId);
 		model.addAttribute("product", product);
 		return "mlogin";
+			}
+			catch(Exception e) {
+				return"error";
+			}
 
-		
-		
-		
-	
 		}
 		
 	
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//
+//
+//
+//
+//else if (searchOption.equals("Cid")) {
+//    int cid = Integer.parseInt(searchCriteria);
+//    Product product = (Product) productDAO.getProductByCid(cid);
+//    model.addAttribute("product", product);
+//    return "pList";
+//}

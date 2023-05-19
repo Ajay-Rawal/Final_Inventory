@@ -93,7 +93,7 @@
 
     a {
         text-decoration: none;
-        color: #333;
+        color: #f1f1f1;
     }
 
     .btn {
@@ -122,7 +122,7 @@
   margin-top: 50px;
   margin-right: 30px;
   font-size: 25px;
-  color: #444;
+  color: #f1f1f1;
 }
 
 
@@ -183,10 +183,23 @@
 <br>
 <h4>Search Product</h4>
 <form action="/Inventory/search" method="GET">
-  <label for="productId">Product ID:</label>
-  <input type="text" id="product_id" name="product_id">
-  <button type="submit">Search</button>
-</form>
+        <label for="searchOption">Search Option:</label>
+        <br>
+        <input type="radio" name="searchOption" value="product_id" id="searchOption_productId" checked>
+        <label for="searchOption_productId">By Product ID</label>
+        <br>
+        <input type="radio" name="searchOption" value="product_name" id="searchOption_productName">
+        <label for="searchOption_productName">By Product Name</label>
+        <br>
+
+        <br>
+        <label for="searchCriteria">Search Criteria:</label>
+        <br>
+        <input type="text" name="searchCriteria" id="searchCriteria">
+        <br>
+        <br>
+        <button type="submit">Search</button>
+    </form>
 </body>
 </html>
      

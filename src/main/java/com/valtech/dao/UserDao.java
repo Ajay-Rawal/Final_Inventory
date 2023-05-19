@@ -18,9 +18,6 @@ public class UserDao {
 
 	@Autowired
 	private JdbcTemplate jdbcTemplate;
-	
-	
-	
 
 	public void setJdbcTemplate(JdbcTemplate jdbcTemplate) {
 		this.jdbcTemplate = jdbcTemplate;
@@ -104,11 +101,4 @@ public class UserDao {
      }
          
 }
-		/*
-		 * public User validateUser(Login login) { String sql
-		 * ="select * from User where username='"+login.getUsername()+"'and password'"
-		 * +login.getpassword()"'"; List<User> users=jdbcTemplate.query(sql,new User());
-		 * return users.size()>0?users.get(0):null;
-		 * 
-		 * }
-		 */
+		

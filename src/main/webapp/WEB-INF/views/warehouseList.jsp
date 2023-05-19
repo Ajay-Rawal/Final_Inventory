@@ -107,8 +107,7 @@
 				<th>Warehouse name</th>
 				<th>Warehouse address</th>
 				<th>Manager Id </th>
-				<!--   <th>Phone inventory</th>
-				<th>Laptop inventory</th>  -->
+			
 				<th>Inventory</th>
 			</tr>
 		</thead>

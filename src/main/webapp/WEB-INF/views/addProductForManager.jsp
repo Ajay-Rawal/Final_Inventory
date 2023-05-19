@@ -1,5 +1,6 @@
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>  
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>  
+<%@page isELIgnored="false"%>
 
 <!DOCTYPE html>
 <html>
@@ -81,9 +82,9 @@
 			<label for="pquantity">Quantity:</label>
 			<form:input path="Pquantity" id="pquantity" />
 			<label for="cid">Category ID:</label>
-			<form:input path="Cid" id="cid" />
+			<form:input path="Cid" id="cid"  />
 			<label for="userId">Manager ID:</label>
-			<form:input path="userId" id="userId" />
+			<form:input path="userId" id="userId" value="${userId}"/>
 			<input type="submit" value="Save" />
 		</form:form>
 	</div>

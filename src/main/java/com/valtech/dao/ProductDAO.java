@@ -80,12 +80,40 @@ public class ProductDAO {
         return product;
     }
     
+        
+
+//        //READ
+//         public List<Product> getProductCid(int Cid) {
+//         String sql = "SELECT * FROM product WHERE Cid=?";
+//         return (List<Product>) jdbcTemplate.queryForObject(sql, new Object[] {Cid}, new ProductRowMapper() );
+//        
+//     }
+        
+        public Product getProductName(String product_name) {
+            String sql = "SELECT * FROM product WHERE product_name=?";
+            Product product = jdbcTemplate.queryForObject(sql, new Object[] {product_name}, new BeanPropertyRowMapper<Product>(Product.class));
+            return product;
+        }
+        
+        
     
         public List<Product> getProductByuserId(int userId) {
     	String sql = "SELECT * FROM product WHERE userId = ?";
     	return jdbcTemplate.query(sql, new Object[] { userId }, new ProductRowMapper());
     	}
-    
+        
+        
+        public List<Product> getProductByCid(int Cid) {
+        	String sql = "SELECT * FROM product WHERE Cid = ?";
+        	return jdbcTemplate.query(sql, new Object[] { Cid }, new ProductRowMapper());
+        	}
+        
+//        public List<Product> getProductByname(String product_name) {
+//        	String sql = "SELECT * FROM product WHERE product_name = ?";
+//        	Product product =jdbcTemplate.query(sql, new Object[] { product_name }, new BeanPropertyRowMapper<Product>(Product.class);
+//        	return product;
+//        	}
+//    
     
  
     	class ProductRowMapper implements RowMapper<Product> {

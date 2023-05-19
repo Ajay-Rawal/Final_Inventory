@@ -46,7 +46,7 @@
             </div> 
             <div class="form-group">
               <label for="role">Role:</label>
-              <form:input path="role" id="role" class="form-control" />
+              <form:input path="role" value="MANAGER" readonly="readonly" id="role" class="form-control" />
             </div> 
             <div class="form-group text-center">
               <button type="submit" class="btn btn-primary btn-block mt-4">Save</button>  

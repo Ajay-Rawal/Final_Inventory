@@ -1,4 +1,4 @@
-package com.valtech.model;
+	package com.valtech.model;
 
 public class Category {
 	

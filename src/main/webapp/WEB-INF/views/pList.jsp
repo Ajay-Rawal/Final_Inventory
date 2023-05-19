@@ -84,6 +84,7 @@
 				</tr>
 			</thead>
 			<tbody>
+			  
 				<tr>
 					<td>${product.product_id}</td>
 					<td>${product.product_name}</td>
@@ -92,6 +93,7 @@
 					<td>${product.pquantity}</td>
 					<td>${product.cid}</td>
 				</tr>
+		
 			</tbody>
 		</table>
 		<br>

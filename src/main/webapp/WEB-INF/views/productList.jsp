@@ -12,15 +12,70 @@
 </head>
 <body>
 
+
+
+
+ 
+	<form action="/Inventory/search" method="GET">
+        <label for="searchOption">Search Option:</label>
+        <br>
+        <input type="radio" name="searchOption" value="product_id" id="searchOption_productId" checked>
+        <label for="searchOption_productId">By Product ID</label>
+        <br>
+        <input type="radio" name="searchOption" value="product_name" id="searchOption_productName">
+        <label for="searchOption_productName">By Product Name</label>
+        <br>
+        
+        <br>
+        <input type="radio" name="searchOption" value="Cid" id="searchOption_productName">
+        <label for="searchOption_productName">By CID</label>
+        <br>
+        <br>
+        <label for="searchCriteria">Search Criteria:</label>
+       
+        <br>
+        <button type="submit">Search</button>
+    </form>
+
+
 	<div class="container mt-5">
 		<h1 class="text-center mb-5">Product List</h1>
 	
-	 <form action="/Inventory/search" method="GET">
+<!-- 	  <form action="/Inventory/search" method="GET">
   <label for="productId">Product ID:</label>
   <input type="text" id="product_id" name="product_id">
+
   <button type="submit">Search</button>
-</form>
+</form> -->
 	
+	
+<!-- 	<form action="/Inventory/search" method="GET">
+
+    <input type="radio" name="searchOption" value="product_id" checked onclick="updatePlaceholder('Enter product Id')">
+
+    Search Accountants
+
+    <input type="radio" name="searchOption" value="productName" onclick="updatePlaceholder('Enter Product name')">
+
+    Search Students
+
+    <input type="text" name="searchCriteria" id="searchCriteria" placeholder="Enter details">
+
+    <button type="submit">Search</button>
+
+</form>
+
+ 
+
+<script>
+
+    function updatePlaceholder(placeholder) {
+
+        document.getElementById('searchCriteria').placeholder = placeholder;
+
+    }
+
+</script> -->
 	
 	
 		<table class="table table-bordered">
